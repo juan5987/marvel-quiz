@@ -283,11 +283,15 @@ footer {
   border-bottom: 1px solid var(--white-color);
   outline: none;
 }
+.inputBox input::placeholder{
+  font-size: 0.7em;
+  text-transform: none;
+}
 
 .formContent .inputBox label {
   color: var(--white-color);
   position: absolute;
-  top: 0;
+  top: -30px;
   left: 0;
   padding: 10px 0;
   font-size: 17px;
@@ -298,14 +302,14 @@ footer {
   transition: 0.2s ease-in;
 }
 
-.formContent .inputBox input:focus~label,
+/* .formContent .inputBox input:focus~label,
 .formContent .inputBox input:valid~label {
   top: -30px;
   left: 0;
   color: var(--white-color);
   font-size: 16px;
   font-style: italic;
-}
+} */
 
 /* Form buttons */
 .formContent button {
@@ -313,15 +317,16 @@ footer {
   display: block;
   margin: 0 auto 20px;
   min-width: 150px;
-  background-color: transparent;
+  background-color: var(--red-color);
   color: var(--white-color);
   padding: 7px;
   font-size: 15px;
   border-radius: 5px;
+  border: none;
 }
 
 .formContent button:hover {
-  background-color: var(--red-color);
+  background-color: var(--dark-red-color);
   color: var(--white-color);
   cursor: pointer;
 }

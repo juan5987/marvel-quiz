@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Landing from 'components/Landing'
 import Footer from 'components/Footer'
@@ -13,13 +13,13 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/welcome" element={<Welcome/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/signup" element={<Signup/>} />
-          <Route path="*" element={<ErrorPage/>} />
-        </Routes>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/welcome" component={Welcome} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="*" component={ErrorPage} />
+        </Switch>
         <Footer />
       </Router>
     </div>

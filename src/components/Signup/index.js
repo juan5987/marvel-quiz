@@ -1,7 +1,8 @@
 import React, {useState, useContext} from 'react';
+import { Link } from 'react-router-dom';
 import { FirebaseContext } from 'components/Firebase';
 
-const Signup = () => {
+const Signup = (props) => {
 
   const firebase = useContext(FirebaseContext);
 
@@ -31,11 +32,10 @@ const Signup = () => {
       setLoginData({...data});
       // Je vide le message d'erreur
       setError('');
+      props.history.push('/welcome');
     })
     .catch(error => {
       setError(error);
-      // Je vide le formulaire
-      setLoginData({...data});
     })
   }
 
@@ -49,7 +49,7 @@ const Signup = () => {
   const errorMessage = error !== '' && <span>{error.message}</span>
 
   return (
-    <div className="signUpLoginBox">
+    <main className="signUpLoginBox">
       <div className="slContainer">
         <div className="formBoxLeftSignup">
         </div>
@@ -76,10 +76,13 @@ const Signup = () => {
               {signupBtn}
               {errorMessage}
             </form>
+            <div className="linkContainer">
+              <Link className="simpleLink" to="/login">Déja inscrit ? Connectez-vous</Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

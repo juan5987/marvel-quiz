@@ -1,6 +1,6 @@
 import config from './config';
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 class Firebase {
     constructor() {
@@ -14,7 +14,7 @@ class Firebase {
     loginUser = (email, password) => signInWithEmailAndPassword(this.auth, email, password);
 
     // déconnexion
-    signoutUser = () => this.auth.signOut();
+    signoutUser = () => signOut(this.auth);
 
 }
 

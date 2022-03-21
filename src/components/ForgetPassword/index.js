@@ -46,7 +46,7 @@ const ForgetPassword = (props) => {
                 <label htmlFor="email">Email</label>
               </div>
 
-            <button disabled={isButtonDisabled}>Récupérer</button>
+            <button disabled={isButtonDisabled}>Réinitialiser le mot de passe</button>
             {
                 successMessage &&
                 <span className='successMessage'>

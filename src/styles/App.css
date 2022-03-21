@@ -334,7 +334,7 @@ button:disabled:hover,
 button[disabled]:hover {
   border: 1px solid var(--light-grey-color);
   background-color: var(--light-grey-color);
-  color: var(--dark-grey-color);
+  color: white;
   opacity: 0.65;
   cursor: not-allowed;
 }

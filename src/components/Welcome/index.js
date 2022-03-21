@@ -3,16 +3,22 @@ import { FirebaseContext } from 'components/Firebase';
 import Logout from 'components/Logout';
 import Quiz from 'components/Quiz';
 
-const Welcome = () => {
+const Welcome = (props) => {
 
   const firebase = useContext(FirebaseContext);
 
   useEffect(()=> {
-    firebase.auth.onAuthStateChanged( user => {
-      user ? setUserSession(user) : setUserSession("")
+    let listener = firebase.auth.onAuthStateChanged( user => {
+      user ? setUserSession(user) : props.history.push('/');
       console.log(userSession);
-    })
+    });
+
+    return () => {
+      listener()
+    };
   })
+
+
 
   const [userSession, setUserSession] = useState("");
 

@@ -1,6 +1,6 @@
 import config from './config';
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 
 class Firebase {
     constructor() {
@@ -15,6 +15,9 @@ class Firebase {
 
     // déconnexion
     signoutUser = () => signOut(this.auth);
+
+    // Reset password
+    passwordReset =  email => sendPasswordResetEmail(this.auth, email);
 
 }
 

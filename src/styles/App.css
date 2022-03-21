@@ -10,7 +10,7 @@
   --red-color: #EB1D27;
   --blue-color: #4f78a4;
   --dark-red-color: #d31017;
-  --dark-grey-color: #363636;
+  --dark-grey-color: #3636360a;
   --black-color: #333030;
   --deep-black-color: #000000;
 }
@@ -353,6 +353,15 @@ button[disabled]:hover {
 
 .simpleLink:hover {
   color: var(--red-color);
+}
+
+.successMessage{
+  display: block;
+  color: green;
+  text-align: center;
+  border: 1px solid green;
+  padding: 10px;
+  margin: 15px 0;
 }
 /* END SIGNUP - LOGIN - FORGETPASSWORD */
 
